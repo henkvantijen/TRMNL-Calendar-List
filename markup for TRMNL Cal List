@@ -1,0 +1,41 @@
+<div class="flex flex--col gap--space-between h--full">
+
+  <div class="flex flex--row">
+    <span class="title title--large">Agenda</span>
+  </div>
+
+  <div class="flex flex--col gap--small w--full" style="flex:1;">
+    {% if events != blank %}
+    {% for item in events %}
+
+    <div class="flex flex--row gap--medium w--full"
+      style="border-bottom:1px solid #ccc; padding-bottom:3px;">
+
+      <div style="width:18px; flex-shrink:0;">
+        <span class="label" style="opacity:0.25;">{{ item.day }}</span>
+      </div>
+
+      <div style="width:136px; flex-shrink:0;">
+        <span class="value value--small lg:value--large">{{ item.weekday }}</span>
+      </div>
+
+      <div style="width:64px; flex-shrink:0;">
+        <span class="value value--small lg:value--large" data-fit-value="true">{{ item.time }}</span>
+      </div>
+
+      <div style="flex:1;">
+        <span class="value value--small lg:value--large">•{{ item.title | truncate: 28 }}</span>
+      </div>
+
+    </div>
+    {% endfor %}
+    {% else %}
+       <span class="title title--small">No upcoming events 🎉</span>
+    {% endif %}
+  </div>
+
+  <div>
+    <span class="label" style="opacity:0.5;">{{ event_count }} events · {{ updated_at }}</span>
+  </div>
+
+</div>
