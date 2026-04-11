@@ -3,7 +3,7 @@
 # this script puts cal items in json file, somewhere on your public server, 
 # the TRML plugin fetches the json file periodically
 # produce_calendar.py — run every 15 minutes via cron:
-# */15 * * * * /usr/bin/python3 /home/youruser/produce_data.py
+# */15 * * * * /usr/bin/python3 /home/youruser/produce_calendar.py
 # Once:
 # pip install requests icalendar --break-system-packages
 
